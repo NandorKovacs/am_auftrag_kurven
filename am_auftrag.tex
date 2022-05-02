@@ -162,43 +162,27 @@ Die ganze Parameterdarstellung:
 \section{Beispiele}
 Mithilfe von Visualisationstools wie GeoGebra oder tikz in \LaTeX\ können wir Kurven dieser Parameterdarstellung mit gegebenen $w$ Werten visualisieren.
 \par
-$w = 3.4$:
-\begin{center}
-  \begin{tikzpicture}
-    \draw [scale=0.5,domain=0:2000,samples=400,variable=\t]
-    plot ({cos(\t)*6-cos(3.4*\t)*4}, {sin(\t)*6+sin(3.4*\t)*4})
-    ;
-    \draw [style=dotted]
-    plot ({\x }, {0})
-    plot ({0}, {\x})
-    ;
-  \end{tikzpicture}
-\end{center}
 
-$w = 1.5$:
-\begin{center}
-  \begin{tikzpicture}
-    \draw [scale=0.5,domain=0:2000,samples=400,variable=\t]
-    plot ({cos(\t)*6-cos(1.5*\t)*4}, {sin(\t)*6+sin(1.5*\t)*4});
+\newcommand{\visualize}[1]{
+  $w = #1$:
+  \begin{center}
+    \begin{tikzpicture}
+      \draw [scale=0.5,domain=0:2000,samples=4000,variable=\t]
+      plot ({cos(\t)*6-cos(#1*\t)*4}, {sin(\t)*6+sin(#1*\t)*4})
+      ;
+      \draw [style=dotted]
+      plot ({\x }, {0})
+      plot ({0}, {\x})
+      ;
+    \end{tikzpicture}
+  \end{center}
+  
+}
 
-    \draw [style=dotted]
-    plot ({\x }, {0})
-    plot ({0}, {\x})
-    ;
-  \end{tikzpicture}
-\end{center}
-$w = 2.5$:
-\begin{center}
-  \begin{tikzpicture}
-    \draw [scale=0.5,domain=0:2000,samples=400,variable=\t]
-    plot ({cos(\t)*6-cos(2.5*\t)*4}, {sin(\t)*6+sin(2.5*\t)*4});
-
-    \draw [style=dotted]
-    plot ({\x }, {0})
-    plot ({0}, {\x})
-    ;
-  \end{tikzpicture}
-\end{center}
+\visualize{3}
+\visualize{4}
+\visualize{1.5}
+\visualize{2.5}
 
 \section{Anfangsgeschwindigkeit und Anfangswinkel}
 Die Anfangsgeschwindigkeit ist die Länge vom Tangentialvektor $\overrightarrow{r}'(t)$ bei $t=0$.
