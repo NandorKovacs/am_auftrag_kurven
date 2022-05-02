@@ -17,7 +17,7 @@
 \end{titlepage}
 \section{Aufgabenbeschreibung}
 Der Punkt M dreht sich im Abstand von 6 um den Ursprung mit Winkelgeschwindigkeit 1 im Gegenuhrzeigersinn.
-Der Punkt P derht um M im Abstand von 4 mit Winkelgeschwindigkeit w um M im Uhrzeigersinn.
+Der Punkt P dreht um M im Abstand von 4 mit Winkelgeschwindigkeit w um M im Uhrzeigersinn.
 Die Anfangsposition von P ist (2, 0).
 
 \begin{center}
@@ -77,7 +77,7 @@ Für die Parameterdarstellung suchen wir den Ortsvektor $\vec{P}$.
 \end{align*}
 
 Das ist eindeutig weswegen es stimmt.
-Der Vector vom Ursprung zu einem beliebigen Vector $\overrightarrow{V}$, addiert zum Vector $\overrightarrow{VP}$ wird gleich P sein.
+Der Vektor vom Ursprung zu einem beliebigen Vektor $\overrightarrow{V}$, addiert zum Vektor $\overrightarrow{VP}$ wird gleich P sein.
 \\
 
 \begin{align*}
@@ -90,9 +90,9 @@ Der Vector vom Ursprung zu einem beliebigen Vector $\overrightarrow{V}$, addiert
 
 Der Punkt $M$ bewegt sich mit einer Winkelgeschwindigkeit von 1 auf einem Kreis mit einem Radius von 6.
 Eine Bewegung mit der Winkelgeschwindigkeit von 1 heisst, dass sich der Punkt in einer Zeiteinheit um 1 Winkelgrad auf der Kreisbahn engtlangbewegt.
-Die sinus und cosinus Funktionen geben die x, respektive die y Koordinaten an für Punkte auf dem Einheitskreis, die mit dem Ursprung und dem Punkt (0, 1) einen bestimmten Winkel $\gamma$ einschliessen.
-Wir können $t$ als Zeit nehmen, und in die cosinus Funktion einsetzen für die x Koordinate auf dem einheitskreis, und in die sinus Funktion einsetzen für die y Koordinate auf dem Einheitskreis.
-Da wir aber einen Kreis mit radius 6 möchten, multiplizieren wir diesen Vector mit 6.
+Die Sinus und Cosinus Funktionen geben die x, respektive die y Koordinaten an für Punkte auf dem Einheitskreis, die mit dem Ursprung und dem Punkt (0, 1) einen bestimmten Winkel einschliessen.
+Wir können $t$ als Zeit nehmen, und in die Cosinus Funktion einsetzen für die x Koordinate auf dem Einheitskreis, und in die Sinus Funktion einsetzen für die y Koordinate auf dem Einheitskreis.
+Da wir aber einen Kreis mit Radius 6 möchten, multiplizieren wir diesen Vektor mit 6.
 Somit werden alle Punkte 6mal so weit vom Ursprung sein wie auf dem Einheitskreis, und unser Kreis nimmt einen Radius von 6 an.
 
 \begin{align*}
@@ -105,8 +105,8 @@ Somit werden alle Punkte 6mal so weit vom Ursprung sein wie auf dem Einheitskrei
 \\
 
 Der Punkt $P$ bewegt sich mit einer Winkelgeschwindigkeit von $w$ auf einem Kreis mit dem Radius von 4.
-Das heisst, das hier im Gegensatz zu vorher $t$ nicht einfach als Winkel eingesetzt werden kann, sondern es noch mit $w$ multipliziert werden muss.
-Ausserdem muss die x Koordinate mit -1 multipliziert werden, da sich der punkt $P$ im Uhrzeigersinn dreht.
+Das heisst, dass hier im Gegensatz zu vorher $t$ nicht einfach als Winkel eingesetzt werden kann, sondern es noch mit $w$ multipliziert werden muss.
+Ausserdem muss die x Koordinate mit -1 multipliziert werden, da sich der Punkt $P$ im Uhrzeigersinn dreht.
 
 \begin{align*}
   \overrightarrow{P} & = \overrightarrow{M} + \overrightarrow{MP}               \\
@@ -139,12 +139,12 @@ Die Parameterdarstellung von $P$ kann einfach aus dem Ortsvektor bestimmt werden
 \\
 
 Es fehlt noch der Definitionsbereich.
-Der Punkt $M$ ist am selben Ort, wenn $\mod{\frac{t}{2\pi}} = 0$.
+Der Punkt $M$ ist am selben Ort, wenn $t\pmod{2\pi} = 0$.
 Das ist so, denn $M$ braucht $2\pi$ Zeit für eine Runde.
-$P$ braucht aber $2\pi \cdot w$ Zeit für eine Runde, also ist es am selben Ort relativ zu $M$ wenn $\mod{\frac{t}{2\pi \cdot w}} = 0$ stimmt.
+$P$ braucht aber $2\pi \cdot w$ Zeit für eine Runde, also ist es am selben Ort relativ zu $M$ wenn $t\pmod{2\pi \cdot w} = 0$ stimmt.
 Der Definitionsbereich geht also von null, bis zur tiefsten Zahl die beide Gleichungen erfüllt.\\
 \begin{align*}
-  t \in \{0, \min(x\in\mathbb{R} | \mod{\frac{x}{2\pi}} = 0 \land\mod{\frac{x}{2\pi \cdot w}} = 0)\} \\
+  t \in \{0, \min\{x\in\mathbb{R} | t\pmod{2\pi} = 0 \land t\pmod{2\pi \cdot w} = 0\}\} \\
 \end{align*}
 \\
 
@@ -154,18 +154,18 @@ Die ganze Parameterdarstellung:
     \cos(t)\cdot 6 - \cos(w\cdot t)\cdot 4
     \\
     \sin(t)\cdot 6 + \sin(w\cdot t)\cdot 4
-  \end{cases}t \in \{0, \min\{x\in\mathbb{R} | \mod{\frac{x}{2\pi}} = 0 \land\mod{\frac{x}{2\pi \cdot w}} = 0\}\} \\
+  \end{cases}t \in \{0, \min\{x\in\mathbb{R} | t\pmod{2\pi} = 0 \land t\pmod{2\pi \cdot w} = 0\}\} \\
 \end{align*}
 \\
 
 \pagebreak
 \section{Beispiele}
-Mithilfe von Visualisationstools wie GeoGebra oder tikz in \LaTeX können wir Kurven dieser Parameterdarstellung mit gegebenen $w$ Werten visualisieren.
+Mithilfe von Visualisationstools wie GeoGebra oder tikz in \LaTeX\ können wir Kurven dieser Parameterdarstellung mit gegebenen $w$ Werten visualisieren.
 \par
 $w = 3.4$:
 \begin{center}
   \begin{tikzpicture}
-    \draw [scale=0.5,domain=0:2000,samples=4000,variable=\t]
+    \draw [scale=0.5,domain=0:2000,samples=400,variable=\t]
     plot ({cos(\t)*6-cos(3.4*\t)*4}, {sin(\t)*6+sin(3.4*\t)*4})
     ;
     \draw [style=dotted]
@@ -178,7 +178,7 @@ $w = 3.4$:
 $w = 1.5$:
 \begin{center}
   \begin{tikzpicture}
-    \draw [scale=0.5,domain=0:2000,samples=4000,variable=\t]
+    \draw [scale=0.5,domain=0:2000,samples=400,variable=\t]
     plot ({cos(\t)*6-cos(1.5*\t)*4}, {sin(\t)*6+sin(1.5*\t)*4});
 
     \draw [style=dotted]
@@ -190,7 +190,7 @@ $w = 1.5$:
 $w = 2.5$:
 \begin{center}
   \begin{tikzpicture}
-    \draw [scale=0.5,domain=0:2000,samples=4000,variable=\t]
+    \draw [scale=0.5,domain=0:2000,samples=400,variable=\t]
     plot ({cos(\t)*6-cos(2.5*\t)*4}, {sin(\t)*6+sin(2.5*\t)*4});
 
     \draw [style=dotted]
@@ -201,8 +201,8 @@ $w = 2.5$:
 \end{center}
 
 \section{Anfangsgeschwindigkeit und Anfangswinkel}
-Die Anfangsgeschwindigkeit ist die Länge vom Tangentialvector $\overrightarrow{r}'(t)$ bei $t=0$.
-Der Anfangswinkel ist der Winkel von diesem Vector.
+Die Anfangsgeschwindigkeit ist die Länge vom Tangentialvektor $\overrightarrow{r}'(t)$ bei $t=0$.
+Der Anfangswinkel ist der Winkel von diesem Vektor.
 
 \begin{align*}
   \overrightarrow{r}(t)  & = \begin{pmatrix}
