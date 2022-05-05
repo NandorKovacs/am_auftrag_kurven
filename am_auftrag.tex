@@ -10,10 +10,14 @@
     \vspace*{5cm}
     \huge\textbf{Angewandte Mathematik}\\
     \vspace{0.5cm}
-    Auftrag Kurven\\
-    \date\\
-    \vspace{2cm}
+    Auftrag Kurven
   \end{center}
+  \vfill
+  \vfill
+  \begin{tabular}{r}
+    Nandor Kovacs \\
+    \small\today  \\
+  \end{tabular}
 \end{titlepage}
 \section{Aufgabenbeschreibung}
 Der Punkt M dreht sich im Abstand von 6 um den Ursprung mit Winkelgeschwindigkeit 1 im Gegenuhrzeigersinn.
@@ -164,10 +168,9 @@ Mithilfe von Visualisationstools wie GeoGebra oder tikz in \LaTeX\ können wir K
 \par
 
 \newcommand{\visualize}[1]{
-  $w = #1$:
-  \begin{center}
+  $w = #1$
     \begin{tikzpicture}
-      \draw [scale=0.5,domain=0:2000,samples=4000,variable=\t]
+      \draw [scale=0.6,domain=0:2000,samples=4000,variable=\t]
       plot ({cos(\t)*6-cos(#1*\t)*4}, {sin(\t)*6+sin(#1*\t)*4})
       ;
       \draw [style=dotted]
@@ -175,8 +178,7 @@ Mithilfe von Visualisationstools wie GeoGebra oder tikz in \LaTeX\ können wir K
       plot ({0}, {\x})
       ;
     \end{tikzpicture}
-  \end{center}
-  
+
 }
 
 \visualize{3}
